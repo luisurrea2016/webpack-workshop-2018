@@ -3,10 +3,6 @@ import { top, bottom } from "./footer";
 import makeButton from "./button";
 import { makeColorStyle } from "./button-styles";
 
-console.log(
-  nav(),
-  top,
-  bottom,
-  makeButton("My first button!"),
-  makeColorStyle("cyan")
-);
+const btn = makeButton("Boom");
+btn.style = makeColorStyle("cyan");
+document.body.appendChild(btn);
