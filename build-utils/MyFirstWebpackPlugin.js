@@ -24,7 +24,7 @@ class MyFirstWebpackCompilationPlugin {
         compilation.hooks.seal.tap('MyFirstWebpackCompilationPlugin',
             () => {
                 console.warn(compilation);
-                debugger;
+                //debugger;
             });
     }
 }

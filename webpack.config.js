@@ -9,9 +9,18 @@ const presetConfig = require("./build-utils/loadPresets");
 module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
   return webpackMerge(
     {
+      resolveLoader: {
+        alias: {
+          'my-loader': require.resolve('./build-utils/my-loader.js'),
+        },
+      },
       mode: 'none',
       module: {
         rules: [
+          {
+            test: /\.js/,
+            use: 'my-loader',
+          },
           {
             test: /\.jpe?g$/,
             use: [
